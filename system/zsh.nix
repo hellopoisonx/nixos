@@ -1,8 +1,4 @@
-{ ... }: {
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableLsColors = true;
-    shellInit = "eval $(starship init zsh)";
-  };
+{ pkgs, ... }: {
+  environment.shells = with pkgs; [ zsh ];
+  users.users.hpxx.shell = pkgs.zsh;
 }

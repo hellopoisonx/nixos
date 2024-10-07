@@ -8,6 +8,9 @@ let
     alacritty
     mpv
     neovim
+  ];
+  free = with pkgs;[
+    fastfetch
     fzf
     ripgrep
     htop
@@ -20,6 +23,7 @@ let
     rustup
     libnotify
     xdg-utils
+    dunst
   ];
   fonts = with pkgs;[
     wqy_zenhei
@@ -28,6 +32,8 @@ let
     noto-fonts-cjk
     noto-fonts-emoji
     liberation_ttf
+  ];
+  fonts = with pkgs;[
   ];
 in
 {

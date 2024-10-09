@@ -8,5 +8,6 @@
     ./programs
     ./ssh/ssh.nix
     ./i3/i3.nix
+    ./fcitx/fcitx.nix
   ];
 }

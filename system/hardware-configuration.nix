@@ -4,31 +4,33 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ "kvm-intel" "wl" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/70ee1a04-f5b4-459f-95d5-284aca7cb4e7";
+    { device = "/dev/disk/by-uuid/91bbc5b2-2bf3-4fa4-b104-11773b2e74ac";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/c9b385f3-96c1-4e85-bf36-1c1c40faefa8";
+    { device = "/dev/disk/by-uuid/e2cf637b-7839-439c-831b-c5ec5ac0f7c7";
       fsType = "ext4";
     };
 
-  fileSystems."/boot/EFI" =
-    { device = "/dev/disk/by-uuid/09D7-6005";
+  fileSystems."/boot/efi" =
+    { device = "/dev/disk/by-uuid/8132-69F7";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/7ef66b80-48e3-411d-97c3-b571deb0979a"; }
+    [ { device = "/dev/disk/by-uuid/9ea35e6b-ce13-4dac-b0aa-616b610bc174"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -36,8 +38,21 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s3.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp4s0f0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  virtualisation.virtualbox.guest.enable = true;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.nvidia = {
+    open = false;
+    nvidiaSettings = true;
+    powerManagement = {
+      enable = false;
+      finegrained = false;
+    };
+    modesetting.enable = true;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_390;
+  };
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.graphics.enable = true;
+  hardware.bluetooth.enable = true;
 }

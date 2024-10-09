@@ -18,5 +18,7 @@ in
       (nmap "<cmd>vsplit<cr>" "sv")
       (nmap "<cmd>split<cr>" "sh")
       (nmap "<cmd>bw<cr>" "sc")
+      (nmap "$" "T")
+      (nmap "^" "A")
     ];
 }

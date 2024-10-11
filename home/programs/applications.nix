@@ -21,19 +21,8 @@ let
     udiskie
     blueman
   ];
-  fonts = with pkgs;[
-    wqy_zenhei
-    fira-code-nerdfont
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    liberation_ttf
-  ];
+  fonts = import ../fonts/fonts_list.nix pkgs;
 in
 {
   home.packages = unfree ++ free ++ fonts;
-  fonts.fontconfig.enable = true;
-  services = {
-    udiskie.enable = true; # auto mount usb device
-  };
 }

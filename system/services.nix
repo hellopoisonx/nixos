@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 {
   # Enable the OpenSSH daemon.
   services.openssh.enable = false;
@@ -19,7 +19,11 @@
     xkb.layout = "us";
     xkb.options = "eurosign:e,caps:escape";
     enable = true;
-    windowManager.i3.enable = true;
+    windowManager.i3 = {
+      enable = true;
+    };
     desktopManager.runXdgAutostartIfNone = true;
   };
+
+  services.udisks2.enable = true;
 }

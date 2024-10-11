@@ -14,6 +14,20 @@
       ];
       terminal = "alacritty";
       window.titlebar = false;
+      bars = [
+        {
+          fonts = {
+            names = [ "CodeNewRoman Nerd Font Mono" "LXGW WenKai Mono" ];
+            style = "Bold";
+            size = 11.0;
+          };
+          extraConfig = "output DP-2";
+          statusCommand = "i3blocks -c ~/.config/i3blocks/top";
+          position = "top";
+          trayOutput = "DP-2";
+          trayPadding = 2;
+        }
+      ];
       keybindings = let 
         mod = config.xsession.windowManager.i3.config.modifier;
       in lib.mkOptionDefault {
@@ -27,10 +41,10 @@
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
 
-        "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status";
-        "XF86AudioLowerVolume"= "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status";
-        "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status";
-        "XF86AudioMicMute" = "exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status";
+        "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
+        "XF86AudioLowerVolume"= "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%";
+        "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioMicMute" = "exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle";
 
         "XF86MonBrightnessUp" = "exec --no-startup-id light -A 5";
         "XF86MonBrightnessDown" = "exec --no-startup-id light -U 5";
@@ -73,7 +87,7 @@ for_window [class="Blueman-manager"] floating enable
 for_window [class="Clash_flutter"] floating enable
 for_window [class="Emulator"] floating enable
 for_window [class="VirtualBox Machine"] floating enable
-for_window [title="metacubexd"] floating enable
+# for_window [title="metacubexd"] floating enable
 for_window [title="timeshift-gtk"] floating enable
 for_window [class="pavucontrol"] floating enable
 

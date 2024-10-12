@@ -1,9 +1,12 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 let
-  unfree = with pkgs;[
+  unfree = with pkgs; [
     google-chrome
+    wpsoffice-cn
+    qq
   ];
-  free = with pkgs;[
+  free = with pkgs; [
+    telegram-desktop
     fastfetch
     fzf
     ripgrep

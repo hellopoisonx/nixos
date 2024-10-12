@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   # Enable the OpenSSH daemon.
   services.openssh.enable = false;
@@ -21,9 +21,27 @@
     enable = true;
     windowManager.i3 = {
       enable = true;
+      extraPackages = with pkgs; [
+        i3status
+        i3blocks
+      ];
     };
     desktopManager.runXdgAutostartIfNone = true;
   };
 
   services.udisks2.enable = true;
+
+  systemd.services.clash-meta = {
+    enable = true;
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    description = "Clash.Meta";
+    serviceConfig = {
+      Type = "simple";
+      User = "root";
+      ExecStart = "${pkgs.clash-meta}/bin/clash-meta -d /etc/clash-meta";
+    };
+  };
+
+  services.flatpak.enable = true;
 }

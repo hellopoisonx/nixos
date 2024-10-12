@@ -33,7 +33,11 @@
         };
       };
     };
-    extensions.fzf-native = { enable = true; };
-    extensions.undo = { enable = true; };
+    extensions.fzf-native = {
+      enable = true;
+    };
+    extensions.undo = {
+      enable = true;
+    };
   };
 }

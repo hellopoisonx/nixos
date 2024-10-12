@@ -13,25 +13,27 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./system
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.hpxx = import ./home;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-          }
-        ];
+  outputs =
+    inputs@{ nixpkgs, home-manager, ... }:
+    {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+      nixosConfigurations = {
+        nixos = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./system
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "bk";
+              home-manager.users.hpxx = import ./home;
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+              };
+            }
+          ];
+        };
       };
     };
-  };
 }
-
-

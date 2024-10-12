@@ -1,6 +1,10 @@
 clean:
 	if [ -f flake.lock ]; then rm ./flake.lock; fi;
 
+update:
+	nix flake update /etc/nixos
+	nixos-rebuild switch $(arguments)
+
 copy:
 	cp -r `ls | grep -v 'flake.lock'` /etc/nixos	
 

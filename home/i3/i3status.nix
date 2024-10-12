@@ -31,7 +31,7 @@
         };
       };
       "cpu_usage" = {
-        position= 4;
+        position = 4;
         settings = {
           format = " %usage";
         };

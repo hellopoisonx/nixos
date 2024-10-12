@@ -2,8 +2,8 @@
   programs.nixvim.plugins.toggleterm = {
     enable = true;
     settings = {
-      hide_numbers = true; 
-      autochdir = false; 
+      hide_numbers = true;
+      autochdir = false;
       shade_terminals = true;
       start_in_insert = true;
       insert_mappings = true;
@@ -24,9 +24,16 @@
       };
     };
   };
-  programs.nixvim.keymaps = [{
-    action = "<cmd>ToggleTerm<cr>";
-    mode = [ "n" ];
-    key = "<leader>t";
-  }];
+  programs.nixvim.keymaps = [
+    {
+      action = "<cmd>ToggleTerm<cr>";
+      mode = [ "n" ];
+      key = "<leader>t";
+    }
+    {
+      action = "<cmd>ToggleTerm<cr>";
+      mode = [ "t" ];
+      key = "jj";
+    }
+  ];
 }

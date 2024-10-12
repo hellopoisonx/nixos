@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     wget
@@ -9,6 +9,7 @@
     git
     pulseaudio
     light
+    nixfmt-rfc-style
   ];
   environment.pathsToLink = [ "/share/zsh" ];
 }

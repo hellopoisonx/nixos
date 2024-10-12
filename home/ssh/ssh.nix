@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   imports = [ ../../protect/ssh.nix ];
   programs.ssh = {
     enable = true;

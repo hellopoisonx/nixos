@@ -1,16 +1,17 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
-  imports =
-    [
-      ./bootloader.nix
-      ./env.nix
-      ./network.nix
-      ./nix-configuration.nix
-      ./hardware-configuration.nix
-      ./services.nix
-      ./zsh.nix
-    ];
+  imports = [
+    ./bootloader.nix
+    ./env.nix
+    ./network.nix
+    ./nix-configuration.nix
+    ./hardware-configuration.nix
+    ./hardware.nix
+    ./services.nix
+    ./zsh.nix
+    ./xdg.nix
+  ];
 
   programs.nix-ld.enable = true;
 
@@ -20,10 +21,14 @@
 
   users.users.hpxx = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "audio"];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+      "audio"
+    ];
   };
 
   system.copySystemConfiguration = false; # not supported by flake
   system.stateVersion = "24.05";
 }
-

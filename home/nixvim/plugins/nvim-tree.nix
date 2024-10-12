@@ -28,9 +28,11 @@
     };
   };
   programs.nixvim.plugins.web-devicons.enable = true; # dep
-  programs.nixvim.keymaps = [{
-    action = "<cmd>NvimTreeToggle<cr>";
-    mode = [ "n" ];
-    key = "fe";
-  }];
+  programs.nixvim.keymaps = [
+    {
+      action = "<cmd>NvimTreeToggle<cr>";
+      mode = [ "n" ];
+      key = "fe";
+    }
+  ];
 }

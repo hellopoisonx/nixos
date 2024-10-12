@@ -1,11 +1,13 @@
 {
   programs.nixvim = {
     defaultEditor = true;
+    performance.combinePlugins.enable = true;
     vimdiffAlias = true;
     vimAlias = true;
     viAlias = true;
+    luaLoader.enable = true;
     clipboard = {
-      register = "unnamedplus";   
+      register = "unnamedplus";
       providers.xclip.enable = true;
     };
     opts = {
@@ -22,6 +24,10 @@
       cursorline = true;
       ruler = true;
     };
+    extraConfigLua = ''
+      vim.wo.foldmethod = 'expr'
+      vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    '';
     globals.mapleader = " ";
   };
 }

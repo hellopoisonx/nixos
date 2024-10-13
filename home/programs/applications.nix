@@ -18,6 +18,7 @@ let
     cmake
     gcc
     rustup
+    lua5_4
     libnotify
     xdg-utils
     dunst

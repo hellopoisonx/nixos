@@ -3,7 +3,7 @@ clean:
 
 update:
 	nix flake update /etc/nixos
-	nixos-rebuild switch $(arguments)
+	nixos-rebuild switch --upgrade $(arguments)
 
 copy:
 	cp -r `ls | grep -v 'flake.lock'` /etc/nixos	

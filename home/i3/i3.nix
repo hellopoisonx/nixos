@@ -20,7 +20,7 @@
           notification = false;
         }
       ];
-      terminal = "alacritty";
+      terminal = "kitty";
       window.titlebar = false;
       bars = [
         {
@@ -63,6 +63,8 @@
           "XF86MonBrightnessDown" = "exec --no-startup-id light -U 5";
 
           "${mod}+Shift+a" = "focus child";
+
+          "${mod}+d" = "exec --no-startup-id rofi -show drun -show-icons";
         };
     };
     extraConfig = ''

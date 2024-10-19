@@ -40,6 +40,7 @@
         };
 
         time.timeZone = "Asia/Shanghai";
+        system.stateVersion = "24.05";
       };
   };
 }

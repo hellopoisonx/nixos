@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 {
   imports = [ ../../protect/ssh.nix ];
   programs.ssh = {

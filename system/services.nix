@@ -3,10 +3,6 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = false;
 
-  services.displayManager = {
-    defaultSession = "none+i3";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -26,7 +22,16 @@
         i3blocks
       ];
     };
+    windowManager.awesome = {
+      enable = false;
+    };
     desktopManager.runXdgAutostartIfNone = true;
+  };
+
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager = {
+    # defaultSession = "none+i3";
+    sddm.enable = true;
   };
 
   services.udisks2.enable = true;

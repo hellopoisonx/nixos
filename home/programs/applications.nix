@@ -1,11 +1,13 @@
 { pkgs, ... }:
 let
   unfree = with pkgs; [
-    google-chrome
+    # inputs.browser-previews.packages.${pkgs.system}.google-chrome-dev # cause rendering problem don't know why
     wpsoffice-cn
     qq
   ];
   free = with pkgs; [
+    firefox
+    neovide
     telegram-desktop
     fastfetch
     fzf

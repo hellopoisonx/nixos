@@ -11,6 +11,8 @@
     ./services.nix
     ./zsh.nix
     ./xdg.nix
+    ./virt.nix
+    ./fcitx5.nix
   ];
 
   programs.nix-ld.enable = true;
@@ -26,6 +28,7 @@
       "networkmanager"
       "video"
       "audio"
+      "libvirtd"
     ];
   };
 

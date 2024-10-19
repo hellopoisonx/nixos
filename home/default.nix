@@ -7,12 +7,13 @@
     ./programs
     ./ssh/ssh.nix
     ./i3
-    ./fcitx/fcitx.nix
+    ./terminals
     ./polybar/polybar.nix # use i3bar instead
     ./udiskie/udiskie.nix
     ./fonts/fonts.nix
     ./flameshot/flameshot.nix
-    ./xdg/xdg.nix
+    ./rofi/rofi.nix
+    # ./awesome/awesome.nix
     # ./clash-meta/clash-meta.nix
   ];
 }

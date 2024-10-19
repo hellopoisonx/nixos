@@ -28,10 +28,10 @@
     desktopManager.runXdgAutostartIfNone = true;
   };
 
-  services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = false;
   services.displayManager = {
-    # defaultSession = "none+i3";
-    sddm.enable = true;
+    defaultSession = "none+i3";
+    sddm.enable = false;
   };
 
   services.udisks2.enable = true;

@@ -1,11 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
+    import = [ pkgs.alacritty-theme.tokyo-night-storm ];
     font = {
-      size = 13;
+      size = 12;
       normal = {
-        family = "FiraCode Nerd Font Mono";
+        family = "CodeNewRoman Nerd Font";
         style = "Regular";
       };
     };

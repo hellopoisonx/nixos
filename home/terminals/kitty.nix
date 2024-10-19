@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.kitty = {
-    enable = true;
+    enable = false;
     shellIntegration.enableZshIntegration = true;
     font = {
       name = "CodeNewRoman Nerd Font";

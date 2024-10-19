@@ -15,6 +15,7 @@
       url = "github:nix-community/browser-previews";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
   };
 
   outputs =
@@ -27,6 +28,12 @@
           modules = [
             ./system
             ./containers
+            ./overlays/overlays.nix
+            {
+              _module.args = {
+                inherit inputs;
+              };
+            }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

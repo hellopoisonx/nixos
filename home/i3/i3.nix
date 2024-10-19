@@ -20,7 +20,7 @@
           notification = false;
         }
       ];
-      terminal = "kitty";
+      terminal = "alacritty";
       window.titlebar = false;
       bars = [
         {

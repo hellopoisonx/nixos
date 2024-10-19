@@ -4,10 +4,11 @@ clean:
 update-flake:
 	nix flake update
 
-update: update-flake copy
+update: update-flake
+	cp flake.lock /etc/nixos/flake.lock
 	nixos-rebuild switch --upgrade $(arguments)
 
-copy:
+copy: update-flake
 	rm -rf `find /etc/nixos/ | tail --lines=+2`
 	cp -r `ls` /etc/nixos
 

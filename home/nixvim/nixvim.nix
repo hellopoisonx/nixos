@@ -6,7 +6,10 @@
 
   programs.nixvim = {
     enable = true;
-    extraPlugins = [ pkgs.vimPlugins.tokyonight-nvim ];
+    extraPlugins = with pkgs; [
+      vimPlugins.tokyonight-nvim
+      vimPlugins.mini-indentscope
+    ];
     colorscheme = "tokyonight-storm";
   };
 }

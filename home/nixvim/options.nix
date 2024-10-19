@@ -24,6 +24,7 @@
       smarttab = true;
       cursorline = true;
       ruler = true;
+      timeoutlen = 300;
     };
     extraConfigLua = ''
       vim.wo.foldmethod = 'expr'

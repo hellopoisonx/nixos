@@ -14,7 +14,16 @@
       python
       yaml
       markdown
+      elixir
     ];
+    settings = {
+      auto_install = false;
+    };
+    languageRegister = {
+      elixir = [
+        "exs"
+      ];
+    };
     folding = true;
     nixGrammars = true;
     nixvimInjections = true;

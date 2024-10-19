@@ -6,6 +6,7 @@ let
     qq
   ];
   free = with pkgs; [
+    fontforge-gtk
     firefox
     neovide
     telegram-desktop

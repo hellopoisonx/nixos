@@ -7,5 +7,6 @@
     ./autopairs.nix
     ./rainbow-delimiters.nix
     ./conform.nix
+    ./lspsaga.nix
   ];
 }

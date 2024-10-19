@@ -1,6 +1,7 @@
 { inputs, ... }:
 {
-  nixpkgs.overlays = [
-    inputs.alacritty-theme.overlays.default
+  nixpkgs.overlays = with inputs; [
+    alacritty-theme.overlays.default
+    neovim-nightly-overlay.overlays.default
   ];
 }

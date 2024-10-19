@@ -3,7 +3,7 @@
   programs.nixvim.plugins.conform-nvim = {
     enable = true;
     settings = {
-        formatters_by_ft = {
+      formatters_by_ft = {
         bash = [
           "shellcheck"
           "shellharden"
@@ -13,6 +13,7 @@
         cpp = [ "clang_format" ];
         c = [ "clang_format" ];
         nix = [ "nixfmt" ];
+        elixir = [ "mix" ];
         "_" = [
           "squeeze_blanks"
           "trim_whitespace"

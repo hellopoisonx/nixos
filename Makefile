@@ -5,18 +5,16 @@ update-flake:
 	nix flake update
 
 update: update-flake
-	cp flake.lock /etc/nixos/flake.lock
-	nixos-rebuild switch --upgrade $(arguments)
+	nixos-rebuild switch --upgrade --flake . $(arguments)
 
-copy: update-flake
-	rm -rf `find /etc/nixos/ | tail --lines=+2`
-	cp -r `ls` /etc/nixos
+boot:
+	nixos-rebuild switch --upgrade --flake . $(arguments)
 
-switch: copy
-	nixos-rebuild switch $(arguments)
+switch:
+	nixos-rebuild switch  --flake . $(arguments)
 
-boot: copy
-	nixos-rebuild boot $(arguments)
+boot:
+	nixos-rebuild boot --flake . $(arguments)
 
 reboot: boot
 	reboot

@@ -13,6 +13,9 @@
     ./xdg.nix
     ./virt.nix
     ./fcitx5.nix
+    # protect
+    ../../nixos-protect/hardware-configuration.nix
+    #
   ];
 
   programs.nix-ld.enable = true;

@@ -1,6 +1,10 @@
 { ... }:
 {
-  imports = [ ../../protect/ssh.nix ];
+  imports = [
+    # protect
+    ../../../nixos-protect/ssh.nix
+    #
+  ];
   programs.ssh = {
     enable = true;
     matchBlocks = {

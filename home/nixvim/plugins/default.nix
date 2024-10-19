@@ -10,5 +10,6 @@
     ./bufferline.nix
     ./telescope.nix
     ./noice.nix
+    ./neoscroll.nix
   ];
 }

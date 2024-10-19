@@ -1,6 +1,6 @@
 { ... }:
 {
   programs.nixvim.plugins.neoscroll = {
-    enable = true;
+    enable = false;
   };
 }

@@ -7,9 +7,6 @@ update-flake:
 update: update-flake
 	nixos-rebuild switch --upgrade --flake . $(arguments)
 
-boot:
-	nixos-rebuild switch --upgrade --flake . $(arguments)
-
 switch:
 	nixos-rebuild switch  --flake . $(arguments)
 

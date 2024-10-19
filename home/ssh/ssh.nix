@@ -1,10 +1,7 @@
 { ... }:
 {
-  imports = [
-    # protect
-    ../../../nixos-protect/ssh.nix
-    #
-  ];
+  home.file.".ssh/github".source = ../../protect/github_hellopoisonx;
+  home.file.".ssh/github.pub".source = ../../protect/github_hellopoisonx.pub;
   programs.ssh = {
     enable = true;
     matchBlocks = {

@@ -6,16 +6,13 @@
     ./env.nix
     ./network.nix
     ./nix-configuration.nix
-    ./hardware-configuration.nix
     ./hardware.nix
     ./services.nix
     ./zsh.nix
     ./xdg.nix
     ./virt.nix
     ./fcitx5.nix
-    # protect
-    ../../nixos-protect/hardware-configuration.nix
-    #
+    ./hardware-configuration.nix
   ];
 
   programs.nix-ld.enable = true;

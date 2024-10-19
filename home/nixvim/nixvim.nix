@@ -10,6 +10,9 @@
       vimPlugins.tokyonight-nvim
       vimPlugins.mini-indentscope
     ];
+    extraConfigLua = ''
+      require('mini.indentscope').setup()
+    '';
     colorscheme = "tokyonight-storm";
   };
 }

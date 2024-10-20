@@ -7,8 +7,6 @@ let
   ];
   free = with pkgs; [
     fontforge-gtk
-    firefox
-    neovide
     telegram-desktop
     fastfetch
     fzf

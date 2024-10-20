@@ -13,6 +13,7 @@
     ./fonts/fonts.nix
     ./flameshot/flameshot.nix
     ./rofi/rofi.nix
+    ./browsers/firefox.nix
     # ./awesome/awesome.nix
     # ./clash-meta/clash-meta.nix
   ];

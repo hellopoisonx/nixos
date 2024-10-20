@@ -1,9 +1,8 @@
-{ exec, ... }:
-''
+exec: url: name: ''
   [Desktop Entry]
   Type=Application
   Terminal=false
-  Name=youdao
+  Name=${name}
   Comment=Online Dictionary
-  Exec=${exec} -new-window https://youdao.com
+  Exec=${exec} -new-window ${url}
 ''

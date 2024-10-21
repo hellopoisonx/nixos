@@ -1,4 +1,3 @@
-{ ... }:
 self: super: {
   xournalpp = super.xournalpp.overrideAttrs (old: {
     src = super.fetchFromGitHub {

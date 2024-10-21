@@ -6,7 +6,6 @@ let
     qq
   ];
   free = with pkgs; [
-    xournalpp
     wine
     winetricks
     fontforge-gtk

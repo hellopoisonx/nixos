@@ -6,6 +6,9 @@ let
     qq
   ];
   free = with pkgs; [
+    xournalpp
+    wine
+    winetricks
     fontforge-gtk
     telegram-desktop
     fastfetch

@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, ... }:
 {
   hardware.nvidia = {
     open = false;
@@ -8,9 +8,15 @@
       finegrained = false;
     };
     modesetting.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.legacy_390;
+    package = pkgs.linuxPackages_6_10.nvidia_x11_legacy390;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;
   hardware.bluetooth.enable = true;
+
+  boot.kernelPackages = pkgs.linuxPackages_6_10;
+
+  boot.extraModprobeConfig = ''
+    options snd-hda-intel model=imac27_122
+  '';
 }

@@ -23,10 +23,16 @@
         src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
         file = "powerlevel10k.zsh-theme";
       }
+      {
+        name = "vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
     ];
 
     sessionVariables = {
       GLFW_IM_MODULE = "ibus";
+      ZVM_VI_ESCAPE_BINDKEY = "jj";
     };
 
     # oh-my-zsh = {

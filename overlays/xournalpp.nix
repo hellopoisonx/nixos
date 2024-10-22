@@ -1,5 +1,6 @@
 self: super: {
   xournalpp = super.xournalpp.overrideAttrs (old: {
+    version = "v1.2.4";
     src = super.fetchFromGitHub {
       owner = "xournalpp";
       repo = "xournalpp";

@@ -13,8 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     browser-previews = {
-      url = "github:nix-community/browser-previews";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/browser-previews"; inputs.nixpkgs.follows = "nixpkgs";
     };
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
   };

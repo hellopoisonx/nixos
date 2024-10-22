@@ -10,6 +10,8 @@
     pulseaudio
     light
     nixfmt-rfc-style
+    xf86_input_wacom
+    libwacom
   ];
   environment.pathsToLink = [ "/share/zsh" ];
 }

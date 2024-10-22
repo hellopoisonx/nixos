@@ -49,4 +49,6 @@
   };
 
   services.flatpak.enable = true;
+
+  services.xserver.wacom.enable = true;
 }

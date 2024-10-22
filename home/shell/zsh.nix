@@ -12,10 +12,21 @@
       nd = "nix develop";
     };
 
-    plugins."powerlevel10k" = {
-      name = "zsh-powerlevel10k";
-      src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
-      file = "powerlevel10k.zsh-theme";
+    plugins = [
+      {
+        name = "p10k-conf";
+        file = "p10k-conf.zsh";
+        src = ./.;
+      }
+      {
+        name = "zsh-powerlevel10k";
+        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
+        file = "powerlevel10k.zsh-theme";
+      }
+    ];
+
+    sessionVariables = {
+      GLFW_IM_MODULE = "ibus";
     };
 
     # oh-my-zsh = {

@@ -17,8 +17,5 @@
       symbol_map = "U+4E00-U+62FF,U+6300-U+77FF,U+7800-U+8CFF,U+8D00-U+9FFF LXGW WenKai Mono";
       enable_audio_bell = false;
     };
-    environment = {
-      "GLFW_IM_MODULE" = "ibus";
-    };
   };
 }

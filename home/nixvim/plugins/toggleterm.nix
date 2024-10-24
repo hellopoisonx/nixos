@@ -28,12 +28,12 @@
     {
       action = "<cmd>ToggleTerm<cr>";
       mode = [ "n" ];
-      key = "<leader>t";
+      key = "<C-/>";
     }
     {
       action = "<cmd>ToggleTerm<cr>";
       mode = [ "t" ];
-      key = "jj";
+      key = "<C-/>";
     }
   ];
 }

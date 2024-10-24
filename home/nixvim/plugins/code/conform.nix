@@ -4,6 +4,11 @@
     enable = true;
     settings = {
       formatters_by_ft = {
+        zsh = [
+          "shellcheck"
+          "shellharden"
+          "shfmt"
+        ];
         bash = [
           "shellcheck"
           "shellharden"

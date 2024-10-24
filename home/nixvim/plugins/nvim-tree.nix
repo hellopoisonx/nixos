@@ -32,7 +32,7 @@
     {
       action = "<cmd>NvimTreeToggle<cr>";
       mode = [ "n" ];
-      key = "fe";
+      key = "<leader>fe";
     }
   ];
 }

@@ -7,12 +7,13 @@
   programs.nixvim = {
     enable = true;
     extraPlugins = with pkgs; [
-      vimPlugins.tokyonight-nvim
+      # vimPlugins.tokyonight-nvim
+      vimPlugins.catppuccin-nvim
       # vimPlugins.mini-indentscope
     ];
     extraConfigLua = ''
       -- require('mini.indentscope').setup()
     '';
-    colorscheme = "tokyonight-storm";
+    colorscheme = "catppuccin-latte";
   };
 }

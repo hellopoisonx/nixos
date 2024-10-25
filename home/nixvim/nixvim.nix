@@ -14,6 +14,6 @@
     extraConfigLua = ''
       -- require('mini.indentscope').setup()
     '';
-    colorscheme = "catppuccin-latte";
+    colorscheme = "catppuccin";
   };
 }

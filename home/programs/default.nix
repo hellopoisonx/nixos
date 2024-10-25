@@ -4,5 +4,6 @@
     ./git.nix
     ./applications.nix
     ./virt.nix
+    ./btop.nix
   ];
 }

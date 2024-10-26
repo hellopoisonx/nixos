@@ -525,11 +525,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1729914489,
-        "narHash": "sha256-ToT18kHGT2v4n1zIZn0BXUmW9ElCPUlq2V+Bon+xWZs=",
+        "lastModified": 1729930614,
+        "narHash": "sha256-zgiwDqe9ZsbvfqcPVSUxMIrZeXOpsshY6S27+zh5FAw=",
         "owner": "hellopoisonx",
         "repo": "nixvim",
-        "rev": "128df0cc6803cb7b3aaff79d0d175681e3783852",
+        "rev": "3460d24a52c57891c51fe41b1c225fd251f11db7",
         "type": "github"
       },
       "original": {

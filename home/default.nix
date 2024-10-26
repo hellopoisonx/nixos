@@ -13,8 +13,5 @@
     ./flameshot/flameshot.nix
     ./rofi/rofi.nix
     ./browsers/firefox.nix
-    ./nixvim-conf/nixvim-conf.nix
-    # ./awesome/awesome.nix
-    # ./clash-meta/clash-meta.nix
   ];
 }

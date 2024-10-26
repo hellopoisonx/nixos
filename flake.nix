@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixvim = {
+    nixvim-conf = {
       url = "github:hellopoisonx/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };

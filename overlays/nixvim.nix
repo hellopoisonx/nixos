@@ -1,4 +1,4 @@
-{nixvim-conf,...}:
+inputs:
 final: prev: {
-  nixvim = nixvim-conf.packages.${prev.system}.default;
+  nixvim = inputs.nixvim-conf.packages.${prev.system}.default;
 }

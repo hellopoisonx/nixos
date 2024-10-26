@@ -6,6 +6,7 @@ let
     qq
   ];
   free = with pkgs; [
+    nixvim
     xournalpp
     wine
     winetricks

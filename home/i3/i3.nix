@@ -15,10 +15,10 @@
         outer = 10;
       };
       startup = [
-        {
-          command = "dunst &";
-          notification = false;
-        }
+        # {
+        #   command = "dunst &";
+        #   notification = false;
+        # }
       ];
       terminal = "alacritty";
       window.titlebar = false;
@@ -65,6 +65,10 @@
           "${mod}+Shift+a" = "focus child";
 
           "${mod}+d" = "exec --no-startup-id rofi -show drun -show-icons";
+
+          "${mod}+g" = "split horizontal";
+
+          "${mod}+p" = "exec ${lib.getExe' pkgs.flameshot "flameshot"} gui";
         };
     };
     extraConfig = ''
@@ -98,13 +102,14 @@
       for_window [class="ts-polkitagent"] floating enable
       for_window [class="ets.exe"] floating enable
       for_window [title="Color Picker"] floating enable
-      for_window [class="Blueman-manager"] floating enable
-      for_window [class="Clash_flutter"] floating enable
+      for_window [class="Blueman-manager"] floating enable for_window [class="Clash_flutter"] floating enable
       for_window [class="Emulator"] floating enable
       for_window [class="VirtualBox Machine"] floating enable
-      # for_window [title="metacubexd"] floating enable
       for_window [title="timeshift-gtk"] floating enable
       for_window [class="pavucontrol"] floating enable
+
+      default_border 3
+      default_floating_border none
 
       # class                 border  bground text    indicator child_border
       client.focused          #3D2BB5 #091C77 #FFFFFF #36BEF4   #285577

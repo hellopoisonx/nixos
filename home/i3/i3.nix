@@ -108,7 +108,7 @@
       for_window [title="timeshift-gtk"] floating enable
       for_window [class="pavucontrol"] floating enable
 
-      default_border 3
+      default_border pixel 3
       default_floating_border none
 
       # class                 border  bground text    indicator child_border

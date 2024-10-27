@@ -1,7 +1,6 @@
-{ config, ... }:
 {
   imports = [
-    # ./starship.nix
+    ./starship.nix
     ./zsh.nix
   ];
 }

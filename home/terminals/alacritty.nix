@@ -2,7 +2,7 @@
 {
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
-    import = [ pkgs.alacritty-theme.catppuccin];
+    general.import = [ pkgs.alacritty-theme.catppuccin ];
     font = {
       size = 12;
       normal = {

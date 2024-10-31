@@ -10,8 +10,9 @@ let
   lua = ''LUA_PATH="$LUA_PATH;${scriptsPath}/?.lua;;" ${luaPath}'';
 in
 {
-  home.file.".config/i3blocks-scripts" = builtins.fetchGit {
-    url = "https://github.com/hellopoisonx/i3blocks-scripts.git";
+  home.file.".config/i3blocks-scripts" = {
+    recursive = true;
+    source = ./i3block_scripts;
   };
   programs.i3blocks = {
     enable = true;

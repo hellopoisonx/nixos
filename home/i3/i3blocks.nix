@@ -10,11 +10,8 @@ let
   lua = ''LUA_PATH="$LUA_PATH;${scriptsPath}/?.lua;;" ${luaPath}'';
 in
 {
-  home.file.".config/i3blocks-scripts" = {
-    enable = true;
-    executable = true;
-    recursive = true;
-    source = ./scripts;
+  home.file.".config/i3blocks-scripts" = builtins.fetchGit {
+    url = "https://github.com/hellopoisonx/i3blocks-scripts.git";
   };
   programs.i3blocks = {
     enable = true;
@@ -33,7 +30,7 @@ in
           interval = "repeat";
         };
         time = lib.hm.dag.entryAfter [ "volume" ] {
-          command = "date \"+%Y.%d.%M %H:%M:%S\"";
+          command = "date +\"%Y/%m/%d %H:%M:%S\"";
           align = "center";
           interval = 1;
         };

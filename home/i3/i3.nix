@@ -14,13 +14,7 @@
         inner = 10;
         outer = 10;
       };
-      startup = [
-        # {
-        #   command = "dunst &";
-        #   notification = false;
-        # }
-      ];
-      terminal = "alacritty";
+      terminal = "kitty";
       window.titlebar = false;
       bars = [
         {

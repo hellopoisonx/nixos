@@ -3,8 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixvim-conf = {
-      url = "github:hellopoisonx/nixvim";
+    inputs.nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -12,13 +12,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     browser-previews = {
-      url = "github:nix-community/browser-previews"; inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/browser-previews";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
   };
 
   outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
+    inputs@{
+      nixpkgs,
+      home-manager,
+      nixvim,
+      ...
+    }:
     {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
       nixosConfigurations = {
@@ -41,6 +47,7 @@
               home-manager.users.hpxx = import ./home;
               home-manager.extraSpecialArgs = {
                 inherit inputs;
+                inherit nixvim;
               };
             }
           ];

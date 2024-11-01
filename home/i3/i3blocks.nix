@@ -6,11 +6,11 @@
 }:
 let
   luaPath = lib.getExe' pkgs.lua5_4 "lua";
-  scriptsPath = "${config.home.homeDirectory}/.config/i3blocks-scripts";
+  scriptsPath = "${config.home.homeDirectory}/.config/i3block-scripts";
   lua = ''LUA_PATH="$LUA_PATH;${scriptsPath}/?.lua;;" ${luaPath}'';
 in
 {
-  home.file.".config/i3blocks-scripts" = {
+  home.file.".config/i3block-scripts" = {
     recursive = true;
     source = ./i3block_scripts;
   };
@@ -18,7 +18,13 @@ in
     enable = true;
     bars = {
       top = {
-        light = {
+        tun_traffic = {
+          command = "${lua} ${scriptsPath}/tun_traffic.lua";
+          align = "center";
+          min_width = 150;
+          interval = 1;
+        };
+        light = lib.hm.dag.entryAfter [ "tun_traffic" ] {
           command = "${lua} ${scriptsPath}/light.lua";
           align = "center";
           min_width = 70;

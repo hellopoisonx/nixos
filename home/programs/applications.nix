@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  code = import ../code; 
+  code = import ../code pkgs; 
   fonts = import ../fonts/fonts_list.nix pkgs;
   unfree = with pkgs; [
     wpsoffice-cn

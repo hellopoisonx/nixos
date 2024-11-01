@@ -1,6 +1,9 @@
 pkgs: with pkgs; [
-  lua5_4
+  (lua5_3.withPackages (
+    ps: with ps; [
+      lua-cjson
+      http
+    ]
+  ))
   lua-language-server
-  lua54Packages.lua-cjson
-  lua54Packages.lua-resty-http
 ]

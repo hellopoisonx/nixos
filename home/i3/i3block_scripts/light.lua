@@ -16,7 +16,7 @@ end
 
 widget
 	:new(nil, function()
-		return "󱩖 " .. light() .. " %"
+		return "󱩖 " .. light() .. "%"
 	end, function()
 		return light() .. "%"
 	end, function()

@@ -14,7 +14,7 @@ local function parse_traffic(t)
 	end
 	local unit_index = math.floor(math.log(t, 2) / 10)
 	local unit = units[unit_index + 1]
-	local digit = t / (2 ^ (unit_index * 10))
+	local digit = string.format("%.1f", t / (2 ^ (unit_index * 10)))
 	return digit .. unit .. "/s"
 end
 -- print(format(traffics.up))

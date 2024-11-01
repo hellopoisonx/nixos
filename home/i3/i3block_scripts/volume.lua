@@ -45,7 +45,7 @@ local w = widget:new(nil, function()
 		return " muted"
 	end
 	local vol = v:volume()
-	return " " .. vol .. " %"
+	return " " .. vol .. "%"
 end, function()
 	if v:isMuted() then
 		return "muted"
@@ -57,7 +57,7 @@ end, function()
 end, function()
 	return "#D35400"
 end, function()
-	return
+	return v:isMuted()
 end)
 
 w:formatOutput()

@@ -23,6 +23,9 @@ let
     xdg-utils
     udiskie
     blueman
+    lemonbar
+    xdotool
+    playerctl
   ];
 in
 {

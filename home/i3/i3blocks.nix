@@ -5,7 +5,8 @@
   ...
 }:
 let
-  luaPath = lib.getExe' pkgs.lua5_4 "lua";
+  luaPkg = import ../code/lua/lua.nix pkgs;
+  luaPath = lib.getExe' luaPkg "lua";
   scriptsPath = "${config.home.homeDirectory}/.config/i3block-scripts";
   lua = ''LUA_PATH="$LUA_PATH;${scriptsPath}/?.lua;;" ${luaPath}'';
 in

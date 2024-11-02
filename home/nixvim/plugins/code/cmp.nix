@@ -10,6 +10,7 @@
         { name = "luasnip"; }
         { name = "buffer"; }
         { name = "cmdline"; }
+        { name = "cmp-dap"; }
       ];
       settings = {
         mapping = {

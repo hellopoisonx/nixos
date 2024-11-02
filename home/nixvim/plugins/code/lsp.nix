@@ -26,6 +26,7 @@
       elixirls.enable = true;
       html.enable = true;
       cssls.enable = true;
+      clangd.enable = true;
       pyright.enable = true;
       bashls.filetypes = [
         "bash"

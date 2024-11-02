@@ -8,6 +8,8 @@
     enable = true;
     settings = {
       formatters_by_ft = {
+        c = [ "clang-format" ];
+        cpp = [ "clang-format" ];
         zsh = [
           "shellcheck"
           "shellharden"

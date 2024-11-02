@@ -42,6 +42,6 @@ in
       vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
     ''
     + extraConf;
-  programs.nixvim.lobals.mapleader = " ";
-  programs.nixvim.olorschemes.catppuccin.enable = true;
+  programs.nixvim.globals.mapleader = " ";
+  programs.nixvim.colorschemes.catppuccin.enable = true;
 }

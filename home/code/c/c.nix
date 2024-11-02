@@ -3,5 +3,6 @@ pkgs: with pkgs; [
   gcc
   gnumake
   cmake
-  pkgconf
+  ninja
+  pkg-config
 ]

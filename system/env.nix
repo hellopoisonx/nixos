@@ -12,6 +12,7 @@
     nixfmt-rfc-style
     xf86_input_wacom
     libwacom
+    xorg.libxcb.dev
   ];
   environment.pathsToLink = [ "/share/zsh" ];
 }

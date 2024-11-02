@@ -8,6 +8,5 @@
     ./rainbow-delimiters.nix
     ./conform.nix
     ./lspsaga.nix
-    ./dap.nix
   ];
 }

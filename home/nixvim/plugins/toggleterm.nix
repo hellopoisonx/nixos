@@ -1,6 +1,6 @@
 {
   programs.nixvim.plugins.toggleterm = {
-    enable = true;
+    enable = false;
     settings = {
       hide_numbers = true;
       autochdir = false;

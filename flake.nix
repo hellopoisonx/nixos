@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nur.url = "github:nix-community/NUR";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,7 +29,7 @@
     {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           modules = [
             ./system
@@ -48,6 +49,7 @@
               home-manager.extraSpecialArgs = {
                 inherit inputs;
                 inherit nixvim;
+                inherit system;
               };
             }
           ];

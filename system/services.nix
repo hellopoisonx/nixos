@@ -18,7 +18,6 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        i3status
         i3blocks
       ];
     };
@@ -48,7 +47,7 @@
     };
   };
 
-  services.flatpak.enable = true;
+  services.flatpak.enable = false;
 
   services.xserver.wacom.enable = true;
 }

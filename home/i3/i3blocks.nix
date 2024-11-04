@@ -19,13 +19,13 @@ in
     enable = true;
     bars = {
       top = {
-        tun_traffic = {
-          command = "${lua} ${scriptsPath}/tun_traffic.lua";
+        traffic = {
+          command = "${lua} ${scriptsPath}/traffic.lua";
           align = "center";
           min_width = 150;
           interval = 1;
         };
-        light = lib.hm.dag.entryAfter [ "tun_traffic" ] {
+        light = lib.hm.dag.entryAfter [ "traffic" ] {
           command = "${lua} ${scriptsPath}/light.lua";
           align = "center";
           min_width = 70;

@@ -28,6 +28,7 @@
       cssls.enable = true;
       clangd.enable = true;
       pyright.enable = true;
+      cmake.enable = true;
       bashls.filetypes = [
         "bash"
         "sh"

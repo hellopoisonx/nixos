@@ -25,7 +25,13 @@ in
           min_width = 150;
           interval = 1;
         };
-        light = lib.hm.dag.entryAfter [ "traffic" ] {
+        cpu = lib.hm.dag.entryAfter [ "traffic" ] {
+          command = "${lua} ${scriptsPath}/cpu.lua";
+          align = "center";
+          min_width = 70;
+          interval = "repeat";
+        };
+        light = lib.hm.dag.entryAfter [ "cpu" ] {
           command = "${lua} ${scriptsPath}/light.lua";
           align = "center";
           min_width = 70;

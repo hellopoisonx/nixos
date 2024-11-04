@@ -55,7 +55,7 @@ end, function()
 end, function()
 	return "#FFFFFF"
 end, function()
-	return "#239B56"
+	return "#000000"
 end)
 
 w:formatOutput()

@@ -22,6 +22,6 @@ widget
 	end, function()
 		return "#FFFFFF"
 	end, function()
-		return "#3498DB"
+		return "#000000"
 	end)
 	:formatOutput()

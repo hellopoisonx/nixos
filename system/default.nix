@@ -28,6 +28,7 @@
       "networkmanager"
       "video"
       "audio"
+      "light"
       "libvirtd"
     ];
   };

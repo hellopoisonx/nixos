@@ -55,7 +55,7 @@ end, function()
 end, function()
 	return "#FFFFFF"
 end, function()
-	return "#D35400"
+	return "#000000"
 end, function()
 	return v:isMuted()
 end)

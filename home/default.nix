@@ -12,6 +12,5 @@
     ./flameshot/flameshot.nix
     ./rofi/rofi.nix
     ./browsers/firefox.nix
-    ./nixvim/nixvim.nix
   ];
 }

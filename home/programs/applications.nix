@@ -5,7 +5,10 @@
   ...
 }:
 let
-  nixvim = import ./nixvim/nixvim.nix inputs.nixvim system;
+  nixvim = import ./nixvim/nixvim.nix {
+    nixvim = inputs.nixvim;
+    inherit system;
+  };
   nur = import inputs.nur {
     nurpkgs = import inputs.nixpkgs { inherit system; };
     inherit pkgs;
@@ -16,7 +19,6 @@ let
     wpsoffice-cn
     qq
     nur.repos.novel2430.wemeet-bin-bwrap
-    nur.repos.novel2430.wechat-universal-bwrap
   ];
   free = with pkgs; [
     xournalpp

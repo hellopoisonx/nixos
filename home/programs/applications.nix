@@ -5,6 +5,7 @@
   ...
 }:
 let
+  nixvim = import ./nixvim/nixvim.nix inputs.nixvim system;
   nur = import inputs.nur {
     nurpkgs = import inputs.nixpkgs { inherit system; };
     inherit pkgs;
@@ -36,6 +37,7 @@ let
     lemonbar
     xdotool
     playerctl
+    nixvim
   ];
 in
 {

@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
-    nixvim-conf = {
+    nixvim = {
       url = "github:hellopoisonx/nixvim";
     };
     home-manager = {
@@ -22,7 +22,6 @@
     inputs@{
       nixpkgs,
       home-manager,
-      nixvim-conf,
       ...
     }:
     {
@@ -47,7 +46,6 @@
               home-manager.users.hpxx = import ./home;
               home-manager.extraSpecialArgs = {
                 inherit inputs;
-                inherit nixvim-conf;
                 inherit system;
               };
             }

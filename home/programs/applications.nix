@@ -9,16 +9,15 @@ let
     nixvim = inputs.nixvim;
     inherit system;
   };
-  nur = import inputs.nur {
-    nurpkgs = import inputs.nixpkgs { inherit system; };
-    inherit pkgs;
-  };
+  # nur = import inputs.nur {
+  #   nurpkgs = import inputs.nixpkgs { inherit system; };
+  #   inherit pkgs;
+  # };
   code = import ../code pkgs;
   fonts = import ../fonts/fonts_list.nix pkgs;
   unfree = with pkgs; [
     wpsoffice-cn
     qq
-    nur.repos.novel2430.wemeet-bin-bwrap
   ];
   free = with pkgs; [
     xournalpp
@@ -39,6 +38,7 @@ let
     lemonbar
     xdotool
     playerctl
+    youtube-music
     nixvim
   ];
 in

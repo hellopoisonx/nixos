@@ -2,12 +2,12 @@
   programs.neovide = {
     enable = true;
     settings = {
+      vsync = false;
       font = {
         normal = [
           "CodeNewRoman Nerd Font Mono"
-          "LXGW WenKai Mono"
         ];
-        size = 13.0;
+        size = 12.0;
       };
     };
   };

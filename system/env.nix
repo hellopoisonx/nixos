@@ -12,7 +12,7 @@
     nixfmt-rfc-style
     xf86_input_wacom
     libwacom
-    xorg.libxcb.dev
+    xfce.xfce4-docklike-plugin
   ];
   environment.pathsToLink = [ "/share/zsh" ];
 }

@@ -15,22 +15,21 @@
     xkb.layout = "us";
     xkb.options = "eurosign:e,caps:escape";
     enable = true;
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        i3blocks
-      ];
+    desktopManager = {
+      runXdgAutostartIfNone = true;
+      xterm.enable = false;
+      xfce = {
+        enable = true;
+        noDesktop = false;
+      };
     };
-    windowManager.awesome = {
-      enable = false;
-    };
-    desktopManager.runXdgAutostartIfNone = true;
+  };
+  services.displayManager = {
+    defaultSession = "xfce";
   };
 
-  services.desktopManager.plasma6.enable = false;
-  services.displayManager = {
-    defaultSession = "none+i3";
-    sddm.enable = false;
+  services.picom = {
+    enable = true;
   };
 
   services.udisks2.enable = true;
@@ -47,7 +46,7 @@
     };
   };
 
-  services.flatpak.enable = false;
+  services.flatpak.enable = true;
 
   services.xserver.wacom.enable = true;
 }

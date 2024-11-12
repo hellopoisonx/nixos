@@ -29,7 +29,7 @@
   };
 
   services.picom = {
-    enable = true;
+    enable = false;
   };
 
   services.udisks2.enable = true;

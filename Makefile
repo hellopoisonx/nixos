@@ -1,8 +1,5 @@
-clean:
-	if [ -f flake.lock ]; then rm ./flake.lock; fi;
-
 update-flake:
-	nix flake update
+	nix flake update ${arguments}
 
 update: update-flake
 	nixos-rebuild switch --upgrade --flake . $(arguments)

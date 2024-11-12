@@ -39,6 +39,7 @@ let
     xdotool
     playerctl
     youtube-music
+    scrcpy
     nixvim
   ];
 in

@@ -16,6 +16,7 @@
   ];
 
   programs.nix-ld.enable = true;
+  programs.adb.enable = true;
 
   time.timeZone = "Asia/Shanghai";
 
@@ -30,6 +31,7 @@
       "audio"
       "light"
       "libvirtd"
+      "adbusers"
     ];
   };
 

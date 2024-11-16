@@ -20,6 +20,7 @@ let
     qq
   ];
   free = with pkgs; [
+    chromium
     xournalpp
     wine
     winetricks

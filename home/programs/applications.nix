@@ -18,9 +18,9 @@ let
   unfree = with pkgs; [
     wpsoffice-cn
     qq
+    # nur.repos.xddxdd.dingtalk
   ];
   free = with pkgs; [
-    chromium
     xournalpp
     wine
     winetricks

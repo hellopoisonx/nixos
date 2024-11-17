@@ -4,16 +4,14 @@
     portal = {
       enable = true;
       extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-kde
+        xdg-desktop-portal-xapp
       ];
       config = {
         common.default = "*";
         i3.default = [
-          "gtk"
-          "kde"
+          "xapp"
         ];
-        kde.default = [ "kde" ];
+        xfce.default = [ "kde" ];
       };
     };
   };

@@ -17,7 +17,7 @@ let
   fonts = import ../fonts/fonts_list.nix pkgs;
   unfree = with pkgs; [
     wpsoffice-cn
-    qq
+    # qq
     # nur.repos.xddxdd.dingtalk
   ];
   free = with pkgs; [

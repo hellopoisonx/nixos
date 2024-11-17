@@ -6,7 +6,6 @@
     ./programs
     ./ssh/ssh.nix
     ./i3
-    ./terminals
     ./udiskie/udiskie.nix
     ./fonts/fonts.nix
     ./flameshot/flameshot.nix

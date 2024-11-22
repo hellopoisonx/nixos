@@ -1,6 +1,6 @@
 {
   programs.neovide = {
-    enable = true;
+    enable = false; # nixos-unstable `cctool` error: `https://nixpk.gs/pr-tracker.html?pr=356292`
     settings = {
       vsync = false;
       font = {

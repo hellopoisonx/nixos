@@ -6,5 +6,6 @@
     ./virt.nix
     ./btop.nix
     ./neovide.nix
+    ./nix-direnv.nix
   ];
 }

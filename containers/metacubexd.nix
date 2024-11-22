@@ -1,6 +1,6 @@
 { ... }:
 {
-  containers.metacubexd = {
+  containers.dev = {
     autoStart = true;
     privateNetwork = true;
     localAddress = "10.231.136.2";
@@ -26,12 +26,12 @@
           wget
           curl
           git
-          nodejs
+          unzip
+          p7zip
           neovim
-          pnpm
         ];
 
-        users.users.metacubexd = {
+        users.users.dev = {
           isNormalUser = true;
           extraGroups = [
             "wheel"
@@ -41,6 +41,10 @@
 
         time.timeZone = "Asia/Shanghai";
         system.stateVersion = "24.05";
+        nix.settings.experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
       };
   };
 }

@@ -1,7 +1,7 @@
 update-flake:
 	nix flake update ${arguments}
 
-update: update-flake
+update:
 	nixos-rebuild switch --upgrade --flake . $(arguments)
 
 switch:

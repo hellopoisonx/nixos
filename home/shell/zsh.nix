@@ -5,6 +5,10 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    autocd = true;
+    initExtraFirst = ''
+      eval "$(direnv hook zsh)"
+    '';
 
     shellAliases = {
       ll = "ls -l";
@@ -33,6 +37,7 @@
     sessionVariables = {
       GLFW_IM_MODULE = "ibus";
       ZVM_VI_ESCAPE_BINDKEY = "jj";
+      EDITOR = "nvim";
     };
   };
 }

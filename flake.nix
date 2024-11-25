@@ -7,9 +7,6 @@
     nixvim = {
       url = "github:hellopoisonx/nixvim";
     };
-    my_nur = {
-      url = "github:hellopoisonx/nur";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

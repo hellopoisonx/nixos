@@ -11,7 +11,7 @@
     package = pkgs.linuxPackages.nvidia_x11_legacy390;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.graphics.enable = true;
+  hardware.opengl.enable = true;
   hardware.bluetooth.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages;

@@ -2,10 +2,13 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nur.url = "github:nix-community/NUR";
     nixvim = {
       url = "github:hellopoisonx/nixvim";
+    };
+    my_nur = {
+      url = "github:hellopoisonx/nur";
     };
     home-manager = {
       url = "github:nix-community/home-manager";

@@ -5,10 +5,6 @@
   ...
 }:
 let
-  nixvim = import ./nixvim/nixvim.nix {
-    nixvim = inputs.nixvim;
-    inherit system;
-  };
   nur = import inputs.nur {
     nurpkgs = import inputs.nixpkgs { inherit system; };
     inherit pkgs;
@@ -18,7 +14,7 @@ let
   unfree = with pkgs; [
     wpsoffice-cn
     qq
-    nur.repos.xddxdd.dingtalk
+    # nur.repos.xddxdd.dingtalk
   ];
   free = with pkgs; [
     xournalpp

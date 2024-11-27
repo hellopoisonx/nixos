@@ -2,13 +2,15 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11"; # beta
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     nur.url = "github:nix-community/NUR";
     nixvim = {
       url = "github:hellopoisonx/nixvim";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager?ref=release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -27,10 +29,16 @@
           modules = [
             ./system
             ./containers
+            {
+              _module.args = {
+                nixvim = inputs.nixvim.packages.${system}.default;
+              };
+            }
             ./overlays/overlays.nix
             {
               _module.args = {
                 inherit inputs;
+                inherit system;
               };
             }
             home-manager.nixosModules.home-manager

@@ -36,5 +36,5 @@
   };
 
   system.copySystemConfiguration = false; # not supported by flake
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }

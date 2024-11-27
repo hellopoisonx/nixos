@@ -13,6 +13,12 @@
     xf86_input_wacom
     libwacom
     xfce.xfce4-docklike-plugin
+    efibootmgr
+    refind
+    grub2
+    shfmt
+    shellharden
+    coreutils
   ];
   environment.pathsToLink = [ "/share/zsh" ];
 }

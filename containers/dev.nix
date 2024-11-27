@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   containers.dev = {
     autoStart = true;
@@ -7,7 +7,7 @@
     hostAddress = "10.231.136.1";
     config =
       {
-        pkgs,
+        pkgs',
         lib,
         ...
       }:
@@ -22,14 +22,16 @@
         };
         services.resolved.enable = true;
 
-        environment.systemPackages = with pkgs; [
-          wget
-          curl
-          git
-          unzip
-          p7zip
-          neovim
-        ];
+        environment.systemPackages =
+          with pkgs';
+          [
+            wget
+            curl
+            git
+            unzip
+            p7zip
+          ]
+          ++ [ pkgs.nixvim ];
 
         users.users.dev = {
           isNormalUser = true;
@@ -40,7 +42,7 @@
         };
 
         time.timeZone = "Asia/Shanghai";
-        system.stateVersion = "24.05";
+        system.stateVersion = "24.11";
         nix.settings.experimental-features = [
           "nix-command"
           "flakes"

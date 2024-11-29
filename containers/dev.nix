@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, system, ... }:
 {
   containers.dev = {
     autoStart = true;
@@ -7,7 +7,7 @@
     hostAddress = "10.231.136.1";
     config =
       {
-        pkgs',
+        pkgs,
         lib,
         ...
       }:
@@ -22,8 +22,17 @@
         };
         services.resolved.enable = true;
 
+        nixpkgs.overlays = [
+          (import ./../overlays/nixvim.nix {
+            inherit system;
+            inherit inputs;
+            inherit pkgs;
+            inherit lib;
+          })
+        ];
+
         environment.systemPackages =
-          with pkgs';
+          with pkgs;
           [
             wget
             curl

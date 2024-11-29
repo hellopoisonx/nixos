@@ -29,11 +29,6 @@
           modules = [
             ./system
             ./containers
-            {
-              _module.args = {
-                nixvim = inputs.nixvim.packages.${system}.default;
-              };
-            }
             ./overlays/overlays.nix
             {
               _module.args = {

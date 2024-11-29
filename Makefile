@@ -1,14 +1,11 @@
 update-flake:
-	nix flake update ${arguments}
+	nix flake update ${args}
 
 update:
-	nixos-rebuild switch --upgrade --flake . $(arguments)
+	nixos-rebuild switch --upgrade --flake . $(args)
 
 switch:
-	nixos-rebuild switch  --flake . $(arguments)
+	nixos-rebuild switch --flake . $(args)
 
 boot:
-	nixos-rebuild boot --flake . $(arguments)
-
-reboot: boot
-	reboot
+	nixos-rebuild boot --flake . $(args)

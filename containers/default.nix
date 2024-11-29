@@ -1,6 +1,6 @@
 { ... }:
 {
   imports = [
-    ./metacubexd.nix
+    ./dev.nix
   ];
 }

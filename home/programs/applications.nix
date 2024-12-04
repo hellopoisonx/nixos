@@ -5,16 +5,14 @@
   ...
 }:
 let
-  nur = import inputs.nur {
-    nurpkgs = import inputs.nixpkgs { inherit system; };
-    inherit pkgs;
-  };
+  my-nur = inputs.my-nur.packages.${system};
   code = import ../code pkgs;
   fonts = import ../fonts/fonts_list.nix pkgs;
   unfree = with pkgs; [
     wpsoffice-cn
     qq
-    # nur.repos.xddxdd.dingtalk
+    my-nur.wemeet
+    my-nur.mihomo-party
   ];
   free = with pkgs; [
     xournalpp

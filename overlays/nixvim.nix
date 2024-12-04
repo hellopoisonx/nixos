@@ -7,27 +7,43 @@
 }:
 self: super: {
   nixvim = inputs.nixvim.packages.${system}.default.extend {
-    plugins.lsp.servers.bashls.enable = true;
+    plugins.lsp.servers = {
+      nixd.enable = true;
+      lua_ls.enable = true;
+      bashls.enable = true;
+      bashls.filetypes = [
+        "bash"
+        "sh"
+        "zsh"
+      ];
+    };
     plugins.treesitter.grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-      bash
       json
       xml
       yaml
       toml
       regex
-      nix
       markdown
       make
-      lua
-      vim
-      vimdoc
     ];
     plugins.conform-nvim.settings = {
       formatters_by_ft = {
+        zsh = [
+          "shellcheck"
+          "shellharden"
+          "shfmt"
+        ];
         bash = [
           "shellcheck"
           "shellharden"
           "shfmt"
+        ];
+        lua = [ "stylua" ];
+        "nix" = [ "nixfmt" ];
+        "_" = [
+          "squeeze_blanks"
+          "trim_whitespace"
+          "trim_newlines"
         ];
       };
       formatters = {
@@ -42,6 +58,12 @@ self: super: {
         };
         squeeze_blanks = {
           command = lib.getExe' pkgs.coreutils "cat";
+        };
+        nixfmt = {
+          command = lib.getExe' pkgs.nixfmt-rfc-style "nixfmt";
+        };
+        stylua = {
+          command = lib.getExe pkgs.stylua;
         };
       };
     };

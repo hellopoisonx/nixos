@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 {
   programs.rofi = {
-    enable = true;
+    enable = false;
     font = "CodeNewRoman Nerd Font";
     cycle = true;
     location = "top";

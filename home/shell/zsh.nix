@@ -35,9 +35,7 @@
     ];
 
     sessionVariables = {
-      GLFW_IM_MODULE = "ibus";
       ZVM_VI_ESCAPE_BINDKEY = "jj";
-      EDITOR = "nvim";
     };
   };
 }

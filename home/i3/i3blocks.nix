@@ -16,7 +16,7 @@ in
     source = ./i3block_scripts;
   };
   programs.i3blocks = {
-    enable = true;
+    enable = false;
     bars = {
       top = {
         traffic = {

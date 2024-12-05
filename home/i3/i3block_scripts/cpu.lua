@@ -26,8 +26,7 @@ utils.sleep(2)
 local idle_curr, total_curr = get_cpu_usage()
 local usage = string.format("%.1f", (idle_curr - idle_prev) / (total_curr - total_prev) * 100)
 local w = widget:new(nil, function()
-	return " " .. usage .. "%"
-end, function()
+	return " " .. usage .. "%" end, function()
 	return " " .. usage .. "%"
 end, function()
 	return "#FFFFFF"

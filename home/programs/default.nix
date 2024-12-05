@@ -7,5 +7,6 @@
     ./btop.nix
     ./neovide.nix
     ./nix-direnv.nix
+    ./kitty.nix
   ];
 }

@@ -222,24 +222,6 @@
         "type": "github"
       }
     },
-    "my-nur": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1732932594,
-        "narHash": "sha256-1TXRjVvofneOTDlecP+nqB6iW4U4vk2Sr3xC+4Bv48Y=",
-        "ref": "refs/heads/master",
-        "rev": "20b64350d5ae6ef67465e1ded4bc70d1ee5bffc4",
-        "revCount": 8,
-        "type": "git",
-        "url": "file:///home/hpxx/code/package/nur"
-      },
-      "original": {
-        "type": "git",
-        "url": "file:///home/hpxx/code/package/nur"
-      }
-    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -264,32 +246,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732350895,
-        "narHash": "sha256-GcOQbOgmwlsRhpLGSwZJwLbo3pu9ochMETuRSS1xpz4=",
+        "lastModified": 1733212471,
+        "narHash": "sha256-M1+uCoV5igihRfcUKrr1riygbe73/dzNnzPsmaLCmpo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0c582677378f2d9ffcb01490af2f2c678dcb29d3",
+        "rev": "55d15ad12a74eb7d4646254e13638ad0c4128776",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-24.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-beta": {
-      "locked": {
-        "lastModified": 1733261153,
-        "narHash": "sha256-eq51hyiaIwtWo19fPEeE0Zr2s83DYMKJoukNLgGGpek=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "b681065d0919f7eb5309a93cea2cfa84dec9aa88",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-24.11",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -308,16 +274,16 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1733220138,
-        "narHash": "sha256-Yh5XZ9yVurrcYdNTSWxYgW4+EJ0pcOqgM1043z9JaRc=",
+        "lastModified": 1733261153,
+        "narHash": "sha256-eq51hyiaIwtWo19fPEeE0Zr2s83DYMKJoukNLgGGpek=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "bcb68885668cccec12276bbb379f8f2557aa06ce",
+        "rev": "b681065d0919f7eb5309a93cea2cfa84dec9aa88",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-24.05",
+        "ref": "nixos-24.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -340,22 +306,6 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1733212471,
-        "narHash": "sha256-M1+uCoV5igihRfcUKrr1riygbe73/dzNnzPsmaLCmpo=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "55d15ad12a74eb7d4646254e13638ad0c4128776",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_4": {
-      "locked": {
         "lastModified": 1733015953,
         "narHash": "sha256-t4BBVpwG9B4hLgc6GUBuj3cjU7lP/PJfpTHuSqE+crk=",
         "owner": "NixOS",
@@ -373,7 +323,7 @@
     "nixvim": {
       "inputs": {
         "flake-parts": "flake-parts",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim_2"
       },
       "locked": {
@@ -398,7 +348,7 @@
         "git-hooks": "git-hooks",
         "home-manager": "home-manager_2",
         "nix-darwin": "nix-darwin",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_3",
         "nuschtosSearch": "nuschtosSearch",
         "treefmt-nix": "treefmt-nix"
       },
@@ -413,21 +363,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "nixvim",
-        "type": "github"
-      }
-    },
-    "nur": {
-      "locked": {
-        "lastModified": 1733366553,
-        "narHash": "sha256-VanV/kdnbhLAnzEh3Kf/sSe45321K+reb3FgR4ouqTk=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "bf1bfc00a69d119a81df27bc45c7f5ae10527908",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
         "type": "github"
       }
     },
@@ -458,12 +393,9 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "my-nur": "my-nur",
-        "nixpkgs": "nixpkgs_2",
-        "nixpkgs-beta": "nixpkgs-beta",
+        "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nixvim": "nixvim",
-        "nur": "nur"
+        "nixvim": "nixvim"
       }
     },
     "systems": {

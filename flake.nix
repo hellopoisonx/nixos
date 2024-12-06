@@ -3,10 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-beta.url = "github:nixos/nixpkgs/nixos-24.11"; # beta
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
-    nur.url = "github:nix-community/NUR";
-    my-nur.url = "git+file:///home/hpxx/code/package/nur";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nixvim = {
       url = "github:hellopoisonx/nixvim";
     };

@@ -13,6 +13,7 @@ let
     qq
     my-nur.wemeet
     my-nur.mihomo-party
+    eudic
   ];
   free = with pkgs; [
     xournalpp

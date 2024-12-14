@@ -14,6 +14,6 @@
       inherit inputs;
       inherit system;
     })
-    inputs.nur.overlay
+    # inputs.nur.overlay
   ];
 }
